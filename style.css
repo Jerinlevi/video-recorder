@@ -6,13 +6,13 @@ body{
     box-sizing: border-box;
 }
 .vid-container{
-    height:100vh;
-    width:100vw;
-    background-color:aqua;
-}
-video{
     height:100%;
     width:100%;
+    background-color:rgb(58, 60, 60);
+}
+video{
+    height:90vh;
+    width:100vw;
 }
 .action-cont{
     height:12rem;
@@ -36,9 +36,10 @@ video{
     display: flex;
     justify-content: center;
     align-items:center;
+    z-index: 2;
 }
 .record-btn{
-    background-color: rgb(200, 196, 196);
+    background-color: rgb(236, 14, 14);
     height:3rem;
     width:3rem;
     border-radius:50%;
@@ -67,7 +68,7 @@ video{
     animation-iteration-count: 1;
     animation-duration: 1s;
 }
-@keyframes scale-record{
+@keyframes scale-capture{
     0%{
         transform: scale(0.8);
     }
@@ -79,9 +80,52 @@ video{
     height: 16rem;
     width: 5 rem;
     position:absolute;
+    font-size:0.8rem;
     bottom:10rem;
+    left:2rem;
+    color:rgb(250, 252, 251);
+    top:4rem;
+
+
+}
+.timer{
+    display:none;
+}
+.filter-cont{
+    height: 16rem;
+    width: 5rem;
+    background-color:aqua;
+    position:absolute;
+    top:calc((100vh - 16rem)/2);
     left:5rem;
-    color:pink;
-
-
+    z-index:2;
+}
+.filter{
+    background-image:url("https://fastly.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI");
+    height:4rem;
+    background-position:center;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    
+    background-blend-mode: color-burn;
+}
+.blue{
+    background-color: rgba(0, 255, 255, 0.439);
+}
+.orange{
+    background-color: rgba(179, 142, 30, 0.439);
+}
+.pink{
+    background-color: rgba(5, 109, 28, 0.439);
+}
+.transparent{
+    background-color: transparent;
+}
+.filter1{
+    height:100vh;
+    width:100vw;
+    z-index: 1;
+    position:absolute;
+    top:0;
+    left:0;
 }
